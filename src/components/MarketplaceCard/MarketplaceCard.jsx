@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import s from './MarketplaceCard.module.css';
 import placeholderImage from '../../assets/image/placeholderImage.webp';
 
+
 function MarketplaceCard({title, description, price, rating, image}) {
   return (
     <Card style={{ width: '18rem' }}>
@@ -17,7 +18,7 @@ function MarketplaceCard({title, description, price, rating, image}) {
           {description}
         </Card.Text>                                            
         <Card.Text className={s.rating}>
-          <FilledStarIcon /> {rating.rate}
+          <FilledStarIcon /> {rating}
         </Card.Text>
       <Button style={{width:'100%'}} variant="success">Success</Button>
       </Card.Body>
