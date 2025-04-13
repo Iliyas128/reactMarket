@@ -1,3 +1,6 @@
+.card{
+overflow: hidden;
+
 .rating{
     display: flex;
     align-items: center;
@@ -23,4 +26,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     word-break: break-word;
+}
+.lazyLoad{
+    height: 350px;
+}
 }

@@ -66,7 +66,7 @@ function MarketplaceCards() {
       </Row>
         )
       }
-      <Pagination>
+      <Pagination className={s.marketPagination}>
         {paginationItem}
       </Pagination>
     </Container>
