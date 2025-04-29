@@ -1,0 +1,62 @@
+.image {
+    width: 38%;
+    object-fit: contain;
+}
+
+.title {
+    font-size: 1.7rem;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.productInformation {
+    width: 55%;
+}
+
+.brand {
+    text-transform: capitalize;
+}
+
+.discount {
+    text-decoration: line-through;
+    color: grey;
+}
+
+.priceWithDiscount {
+    position: relative;
+
+    .badge {
+        position: absolute;
+        font-size: 10px;
+        top: -2px;
+        left: 100%;
+    }
+
+}
+
+.spinnerContainer {
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 780px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .productInformation {
+        width: 100%;
+    }
+
+    .image {
+        width: 79%;
+        margin-inline: auto;
+    }
+}

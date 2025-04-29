@@ -7,11 +7,15 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Pagination from 'react-bootstrap/Pagination';
 import Spinner from 'react-bootstrap/Spinner';
+import { useSearchParams } from "react-router";
+
 
 function MarketplaceCards() {
   const [products, setProducts] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [currentPage, setCurrentPage] = useState(+searchParams.get('page') || 1);
   const [isLoading, setIsLoading] = useState(true);
+  
 
   useEffect(() => {
     getProducts(currentPage);
@@ -36,6 +40,7 @@ function MarketplaceCards() {
 
   function changePages(i){
     setCurrentPage(i);
+    setSearchParams({ page: i });
   }
   const paginationItem=[];
   for(let i = 1; i<=10; i++){
@@ -59,8 +64,9 @@ function MarketplaceCards() {
             title = {product.title} 
             description={product.description} 
             price={product.price} 
+            rating={product.discount}
             image={product.image}
-            rating={product.discount}/>
+            id = {product.id}/>
           </Col>
         ))}
       </Row>
